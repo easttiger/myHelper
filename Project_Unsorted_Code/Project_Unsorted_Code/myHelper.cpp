@@ -90,10 +90,10 @@ list<string> myString::Split::byDelim_lst(string s, string delim, bool excludeEm
   return vRes;
 }
 
-void myGraph::AdjList::Read::from_plain_text(vector<list<long>>* G, string fullpath, string delim, long linenumBase, long LineBufferSize) {
-  asrt("argin:G must have length equal to the non-negative linenumBase, and also the argin:Delim must contain at least 1 character.", "myGraph::adjList::Read::from_plain_text", G->size() == linenumBase, linenumBase >= 0, delim.size() > 0);
+void myGraph::AdjList::Read::from_plain_text(vector<list<long>>* G, string fullpath, string delim, long LineBufferSize) {
+  asrt("argin:G should be list initialized with 1 dummy element, argin:Delim must contain at least 1 character.", "myGraph::adjList::Read::from_plain_text", G->size() == 1, delim.size() > 0);
   if(LineBufferSize < 200L) LineBufferSize = 200L;
-  long linenum = linenumBase;
+  long linenum = 1;
   vector<string> vs;
   char* line = new char[ LineBufferSize ];
   ifstream ifs(fullpath, ifstream::in);
@@ -123,10 +123,10 @@ void myGraph::AdjList::Read::from_plain_text(vector<list<long>>* G, string fullp
   return;
 }
 
-void myGraph::AdjList::Read::from_plain_text(list<list<long>>* G, string fullpath, string delim, long linenumBase, long LineBufferSize) {
-  asrt("argin:G must have length equal to the non-negative linenumBase, and also the argin:Delim must contain at least 1 character.", "myGraph::adjList::Read::from_plain_text", G->size() == linenumBase, linenumBase >= 0, delim.size() > 0);
+void myGraph::AdjList::Read::from_plain_text(list<list<long>>* G, string fullpath, string delim, long LineBufferSize) {
+  asrt("argin:G should be list initialized with 1 dummy element, argin:Delim must contain at least 1 character.", "myGraph::adjList::Read::from_plain_text", G->size() == 1, delim.size() > 0);
   if(LineBufferSize < 200L) LineBufferSize = 200L;
-  long linenum = linenumBase;
+  long linenum = 1;
   list<string> vs;
   char* line = new char[ LineBufferSize ];
   ifstream ifs(fullpath, ifstream::in);

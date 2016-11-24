@@ -30,8 +30,8 @@ namespace myGraph { //"my" is always lowercase
 
     /*R) Topic "R"                                                                          */
     namespace Read { //myGraph::adjList::Read::
-      void from_plain_text(vector<list<long>>* G, string fullpath, string delim, long linenumBase = 1L, long LineBufferSize = 200L);
-      void from_plain_text(list<list<long>>* G, string fullpath, string delim, long linenumBase = 1L, long LineBufferSize = 200L);
+      void from_plain_text(vector<list<long>>* G, string fullpath, string delim, long LineBufferSize = 200L);
+      void from_plain_text(list<list<long>>* G, string fullpath, string delim, long LineBufferSize = 200L);
     }
 
   }
