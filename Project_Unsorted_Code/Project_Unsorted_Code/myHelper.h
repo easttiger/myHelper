@@ -37,6 +37,15 @@ namespace myGraph { //"my" is always lowercase
   }
 }
 
+namespace myPointer {
+  template<typename T> class Ptr {  
+  public:
+    T* p;
+    Ptr(T* q);
+    ~Ptr();
+  };
+}
+
 namespace myStat {
   /**      Helper functions concerning statistics                                                     **/
   namespace OrderStats { //myStat::OrderStats::
