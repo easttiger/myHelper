@@ -22,7 +22,7 @@ void myAssert::asrt(string errmsg, string inWhere, bool cond1, bool cond2, bool 
 #endif
 }
 
-vector<string>& myString::Split::toEqLen_vec(string s, int theEqualLength) {
+vector<string> myString::Split::toEqLen_vec(string s, int theEqualLength) {
   asrt("argin:theEqualLength must be positive", "myString::Split::toEqLen", theEqualLength > 0);
   vector<string> vRes;
   for(size_t i = 0L; i < s.size(); i += theEqualLength) {
@@ -31,7 +31,7 @@ vector<string>& myString::Split::toEqLen_vec(string s, int theEqualLength) {
   return vRes;
 }
 
-list<string>& myString::Split::toEqLen_lst(string s, int theEqualLength) {
+list<string> myString::Split::toEqLen_lst(string s, int theEqualLength) {
   asrt("argin:theEqualLength must be positive", "myString::Split::toEqLen", theEqualLength > 0);
   list<string> vRes;
   for(size_t i = 0L; i < s.size(); i += theEqualLength) {
@@ -40,7 +40,7 @@ list<string>& myString::Split::toEqLen_lst(string s, int theEqualLength) {
   return vRes;
 }
 
-vector<string>& myString::Split::byDelim_vec(string s, string delim, bool excludeEmptySegments, bool keepEmptySegmentsOnTheTwoMargins) {
+vector<string> myString::Split::byDelim_vec(string s, string delim, bool excludeEmptySegments, bool keepEmptySegmentsOnTheTwoMargins) {
   long delimWidth = delim.size();
   assert(delimWidth >= 0); //fail then illogical system
   if(delimWidth == 0) return toEqLen_vec(s, 1);
@@ -65,7 +65,7 @@ vector<string>& myString::Split::byDelim_vec(string s, string delim, bool exclud
   return vRes;
 }
 
-list<string>& myString::Split::byDelim_lst(string s, string delim, bool excludeEmptySegments, bool keepEmptySegmentsOnTheTwoMargins) {
+list<string> myString::Split::byDelim_lst(string s, string delim, bool excludeEmptySegments, bool keepEmptySegmentsOnTheTwoMargins) {
   long delimWidth = delim.size();
   assert(delimWidth >= 0); //fail then illogical system
   if(delimWidth == 0) return toEqLen_lst(s, 1);
@@ -185,7 +185,7 @@ std::default_random_engine& myStat::Distro::getDefaultRandomEngine() {
   return generator;
 }
 
-vector<float>& myStat::Distro::runif(float a, float b, long n) {
+vector<float> myStat::Distro::runif(float a, float b, long n) {
   asrt("a must be strictly less than b and n must be at least 1", "myStat::Distro::runif", a < b, n >= 1L);
 
   vector<float> vRes;
@@ -198,7 +198,7 @@ vector<float>& myStat::Distro::runif(float a, float b, long n) {
 }
 
 
-vector<double>& myStat::Distro::runif(double a, double b, long n) {
+vector<double> myStat::Distro::runif(double a, double b, long n) {
   asrt("a must be strictly less than b and n must be at least 1", "myStat::Distro::runif", a < b, n >= 1L);
   
   vector<double> vRes;
@@ -210,7 +210,7 @@ vector<double>& myStat::Distro::runif(double a, double b, long n) {
   return vRes;
 }
 
-vector<int>& myStat::Distro::runif(int a, int b, long n) {
+vector<int> myStat::Distro::runif(int a, int b, long n) {
   asrt("a must be strictly less than b and n must be at least 1", "myStat::Distro::runif", a < b, n >= 1L);
 
   vector<int> vRes;
@@ -222,7 +222,7 @@ vector<int>& myStat::Distro::runif(int a, int b, long n) {
   return vRes;
 }
 
-vector<long>& myStat::Distro::runif(long a, long b, long n) {
+vector<long> myStat::Distro::runif(long a, long b, long n) {
   asrt("a must be strictly less than b and n must be at least 1", "myStat::Distro::runif", a < b, n >= 1L);
 
   vector<long> vRes;
