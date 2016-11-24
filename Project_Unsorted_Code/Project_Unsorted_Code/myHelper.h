@@ -15,10 +15,10 @@
 #include<cstdarg>
 #include<chrono>
 using namespace std;
+
 /** DECLARES **/
 
-
-namespace myAssert {
+namespace myAssert { //"my" is always lowercase
   /**      Helper functions facilitating flow control                                                 **/
   void asrt(string errmsg, string inWhere, bool cond1, bool cond2 = true, bool cond3 = true, bool cond4 = true);
 }
@@ -38,11 +38,11 @@ namespace myGraph { //"my" is always lowercase
 
 namespace myStat {
   /**      Helper functions concerning statistics                                                     **/
-  namespace OrderStats {
+  namespace OrderStats { //myStat::OrderStats::
     template<typename T> T max(int count, T x, ...);
     template<typename T> T min(int count, T x, ...);
   }
-  namespace Distro {
+  namespace Distro { //myStat::Distro::
     /**    Helper functions re distributions                                                          **/
     std::default_random_engine& getDefaultRandomEngine();
     vector<float>* runif(float a, float b, long n = 1);
@@ -55,7 +55,7 @@ namespace myStat {
 namespace myString {
   /**    Helper function to deal with strings                                                         **/
   /*S) Topic "S"                                                                          */
-  namespace Split {
+  namespace Split { //myString::Split::
     vector<string>* toEqLen(string s, int theEqualLength);
     vector<string>* byDelim(string s, string delim, bool excludeEmptySegments = false, bool keepEmptySegmentsOnTheTwoMargins = false);
   }
