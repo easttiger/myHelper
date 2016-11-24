@@ -65,6 +65,10 @@ int main() {
   //test_myString_Splitting();
   test_myGraph_AdjList_Reading();
   //test_myStat();
+  long* p = new long(10);
+  
+  myPointer::Ptr<long> SP(p);
+
   system("pause");
   return 0;
 }

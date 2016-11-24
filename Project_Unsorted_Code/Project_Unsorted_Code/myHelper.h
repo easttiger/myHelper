@@ -38,12 +38,20 @@ namespace myGraph { //"my" is always lowercase
 }
 
 namespace myPointer {
-  template<typename T> class Ptr {  
-  public:
+  template<typename T> struct Ptr {
     T* p;
-    Ptr(T* q);
-    ~Ptr();
+    Ptr(T* q) : p{ q } {} //template declaration-definition inseparable
+    ~Ptr() {
+      try {
+        delete [] p;
+      } catch(exception e) {
+        try {
+          delete p;
+        } catch(exception e) {}
+      }
+    };
   };
+  
 }
 
 namespace myStat {

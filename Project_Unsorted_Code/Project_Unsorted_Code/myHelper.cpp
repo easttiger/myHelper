@@ -233,19 +233,3 @@ vector<long> myStat::Distro::runif(long a, long b, long n) {
   }
   return vRes;
 }
-
-template<typename T>
-myPointer::Ptr<T>::Ptr(T* q){
-  p = q;
-}
-
-template<typename T>
-myPointer::Ptr<T>::~Ptr(){
-  if(p != nullptr) {
-    try {
-      delete[ ] p;
-    } catch(exception e) {
-      delete p;
-    }
-  }
-}
