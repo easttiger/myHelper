@@ -7,31 +7,31 @@ void test_myString_Splitting() {
   using namespace myString::Split;
   
   try {
-    vector<string>* v = toEqLen("ab c ", 2);     
+    vector<string>* v = toEqLen_vec("ab c ", 2);     
     cout << v->size() << '\n';
     delete v;
-    v = byDelim("1,,,1", ",");
+    v = byDelim_vec("1,,,1", ",");
     cout << v->size() << '\n';
     delete v;
-    v = byDelim("1,,,1", ",",true);
+    v = byDelim_vec("1,,,1", ",", true);
     cout << v->size() << '\n';
     delete v;
-    v = byDelim("1,,,", ",", true);
+    v = byDelim_vec("1,,,", ",", true);
     cout << v->size() << '\n';
     delete v;
-    v = byDelim(",,,", ",", true);
+    v = byDelim_vec(",,,", ",", true);
     cout << v->size() << '\n';
     delete v;
-    v = byDelim("1,,,1", ",",false,true);
+    v = byDelim_vec("1,,,1", ",", false, true);
     cout << v->size() << '\n';
     delete v;
-    v = byDelim("1,,,1", ",", true,true);
+    v = byDelim_vec("1,,,1", ",", true, true);
     cout << v->size() << '\n';
     delete v;
-    v = byDelim("1,,,", ",", true,true);
+    v = byDelim_vec("1,,,", ",", true, true);
     cout << v->size() << '\n';
     delete v;
-    v = byDelim(",,,", ",", true,true);
+    v = byDelim_vec(",,,", ",", true, true);
     cout << v->size() << '\n';
     delete v;
 
@@ -44,7 +44,7 @@ void test_myString_Splitting() {
 }
 
 void test_myGraph_AdjList_Reading() {
-  vector<list<long>>G = vector<list<long>>(1);
+  list<list<long>>G = list<list<long>>(1);
   myGraph::AdjList::Read::from_plain_text(&G, "E:/Dropbox/Courses/Roughgarden_Stanford_algo_course/Week4/_f370cd8b4d3482c940e4a57f489a200b_kargerMinCut.txt", "\t");
   
   
@@ -63,9 +63,9 @@ void test_myStat() {
 
 }
 int main() {
-  test_myString_Splitting();
+  //test_myString_Splitting();
   test_myGraph_AdjList_Reading();
-  test_myStat();
+  //test_myStat();
   system("pause");
   return 0;
 }

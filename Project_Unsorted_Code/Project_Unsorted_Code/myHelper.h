@@ -31,6 +31,7 @@ namespace myGraph { //"my" is always lowercase
     /*R) Topic "R"                                                                          */
     namespace Read { //myGraph::adjList::Read::
       void from_plain_text(vector<list<long>>* G, string fullpath, string delim, long linenumBase = 1L, long LineBufferSize = 200L);
+      void from_plain_text(list<list<long>>* G, string fullpath, string delim, long linenumBase = 1L, long LineBufferSize = 200L);
     }
 
   }
@@ -45,10 +46,10 @@ namespace myStat {
   namespace Distro { //myStat::Distro::
     /**    Helper functions re distributions                                                          **/
     std::default_random_engine& getDefaultRandomEngine();
-    vector<float>* runif(float a, float b, long n = 1);
-    vector<double>* runif(double a, double b, long n = 1);
-    vector<int>* runif(int a, int b, long n = 1);
-    vector<long>* runif(long a, long b, long n = 1);
+    vector<float>& runif(float a, float b, long n = 1);
+    vector<double>& runif(double a, double b, long n = 1);
+    vector<int>& runif(int a, int b, long n = 1);
+    vector<long>& runif(long a, long b, long n = 1);
   }
 }
 
@@ -56,8 +57,10 @@ namespace myString {
   /**    Helper function to deal with strings                                                         **/
   /*S) Topic "S"                                                                          */
   namespace Split { //myString::Split::
-    vector<string>* toEqLen(string s, int theEqualLength);
-    vector<string>* byDelim(string s, string delim, bool excludeEmptySegments = false, bool keepEmptySegmentsOnTheTwoMargins = false);
+    vector<string>& toEqLen_vec(string s, int theEqualLength);
+    list<string>& toEqLen_lst(string s, int theEqualLength);
+    vector<string>& byDelim_vec(string s, string delim, bool excludeEmptySegments = false, bool keepEmptySegmentsOnTheTwoMargins = false);
+    list<string>& byDelim_lst(string s, string delim, bool excludeEmptySegments = false, bool keepEmptySegmentsOnTheTwoMargins = false);
   }
 }
 
