@@ -1,6 +1,5 @@
 #include "myHelper.h"
 
-
 void myAssert::asrt(string errmsg, string inWhere, bool cond1, bool cond2, bool cond3, bool cond4) {
 
   bool jointCondition = (cond1 && cond2 && cond3 && cond4);
@@ -123,27 +122,32 @@ void myGraph::AdjList::Read::from_plain_text(vector<list<long>>* G, string fullp
   return;
 }
 
-void myGraph::AdjList::Read::from_plain_text(list<list<long>>* G, string fullpath, string delim, long LineBufferSize) {
-  asrt("argin:G should be list initialized with 1 dummy element, argin:Delim must contain at least 1 character.", "myGraph::adjList::Read::from_plain_text", G->size() == 1, delim.size() > 0);
+
+void myGraph::AdjList::Read::from_plain_text(vector<list<pair<long, double>>>* G, string fullpath, string delim, long LineBufferSize, string delimWeights) {
+  asrt("argin:G should be list initialized with 1 dummy element. Both argin:delim argin:delimWeights must contain at least 1 character. Both must not be the decimalpoint and not equal to each other.", "myGraph::adjList::Read::from_plain_text", G->size() == 1, delim.size() > 0 && delimWeights.size() > 0, delim != delimWeights, delim != "." && delimWeights != ".");
   if(LineBufferSize < 200L) LineBufferSize = 200L;
   long linenum = 1;
-  list<string> vs;
+  vector<string> vs;
   char* line = new char[ LineBufferSize ];
   ifstream ifs(fullpath, ifstream::in);
 
   while(ifs.getline(line, LineBufferSize).good()) {
-    vs = myString::Split::byDelim_lst(string(line), delim, true, false);
+    vs = myString::Split::byDelim_vec(string(line), delim, true, false);
     long n = stol(vs.front());
     asrt("The " + to_string(linenum) + "-th line in the input file " + fullpath + " doesn't start with " + to_string(linenum), "", "myGraph::adjList::Reading::from_plain_text", linenum == n);
 
     if(vs.size() > 0) {
       //get node label            
       if(vs.size() > 1) { //the node has at least 1 adjacent node
-        list<long> li;
-        list<string>::iterator it = vs.begin();
+        list<std::pair<long,double>> li;
+        vector<string>::iterator it = vs.begin();
         ++it;
-        for(; it != vs.end(); ++it) {
-          li.push_back(stol(*it));
+        for(; it != vs.end(); ++it) {          
+          auto x = myString::Split::byDelim_vec(*it, delimWeights);
+          pair<long, double> y;
+          y.first = stol(x[ 0 ]);
+          y.second = stod(x[ 1 ]);           
+          li.push_back(y);
         }
         assert(n == G->size()); //fail then illogical system
         G->push_back(li);

@@ -31,10 +31,124 @@ namespace myGraph { //"my" is always lowercase
     /*R) Topic "R"                                                                          */
     namespace Read { //myGraph::adjList::Read::
       void from_plain_text(vector<list<long>>* G, string fullpath, string delim, long LineBufferSize = 200L);
-      void from_plain_text(list<list<long>>* G, string fullpath, string delim, long LineBufferSize = 200L);
+      void from_plain_text(vector<list<pair<long,double>>>* G, string fullpath, string delim, long LineBufferSize = 200L, string delimWeights = ",");
+      
     }
 
   }
+}
+
+namespace myHeap {
+  enum HeapableOperations {
+    min = 0,
+    max = 1
+  };
+  struct Heap {
+  private:
+    vector<std::pair<long, double>> data;
+  public:
+    const myHeap::HeapableOperations MaintainedOperation;
+    
+    Heap(myHeap::HeapableOperations OperationToBeMaintained)
+      : MaintainedOperation(OperationToBeMaintained) { }
+    long size() { return data.size(); }
+    void print() {
+      for(auto it = data.begin(); it != data.end(); ++it) {
+        cout << it->first << "(" << it->second << "),";
+      }
+      cout << "end\n";
+    }
+    long pos(long key) {
+      for(long i = 0; i < data.size(); ++i) {        
+        if(data.at(i).first == key) return i;
+      }
+      return -1; //zero data.size automatically returns -1
+    }
+    std::pair<long, double> Root() {
+      return data.front();
+    }
+    long Ins(std::pair<long, double> x) {
+      data.push_back(x);
+      long i = data.size() - 1;
+      long u = (i - 1) >> 1;
+      while(i > 0 && 
+        ((MaintainedOperation == min && data[ u ].second > x.second) 
+       ||(MaintainedOperation == max && data[ u ].second < x.second))) {
+          data[ i ] = data[ u ];
+          data[ u ] = x;
+          i = u--;
+          u >>= 1;
+      }
+      return i;
+    }
+    void Del(long key) {
+      myAssert::asrt("MaintainedOperation must be initialized", 
+                     "myHeap::Heap::Del(long key)", 
+                      MaintainedOperation == min || MaintainedOperation == max);
+      long i = pos(key); if(i < 0) return; //Case zero data.size returns here
+      long n = size() - 1;
+      if(n == i) {
+        data.pop_back();
+        return;
+      }
+      auto x = data[ n ];
+      double y = x.second;
+      data[ i ] = x;
+      data.pop_back(); //data.size decremented
+      if(--n == 0) return;
+      //now restore heap property for element[i]
+      
+      while(i >= 0 && i <= n) {
+        long d1 = (i + 1) * 2 - 1; // left child (down1)
+        long d2 = d1 + 1;          //right child (donw2)
+        if(d1 > n) d1 = -1; 
+        if(d2 > n) d2 = -1; 
+
+        long u = (i == 0) ? -1 : ((i - 1) / 2); // parent (upper)
+        
+        if(MaintainedOperation == min) {
+          if(u >= 0 && data[ u ].second > y) {
+            //the case of parent violation: swap i <-> u
+            //N.B.: relationship with sibling is guaranteed via parent
+            data[ i ] = data[ u ]; data[ u ] = x;
+            i = u;
+          } else if(d2 >= 0 && data[ d2 ].second < data[ d1 ].second) {
+            // d2 is the smaller(larger) child if oper is min(max)
+            //swap i <-> d2
+            data[ i ] = data[ d2 ]; data[ d2 ] = x;
+            i = d2;
+          } else if(d1 >= 0 && data[ d1 ].second < y) {
+            //swap i <-> d1
+            data[ i ] = data[ d1 ]; data[ d1 ] = x;
+            i = d1;
+          } else {
+            return;
+          }
+        } else if(MaintainedOperation == max) {
+          if(u >= 0 && data[ u ].second < y) {
+            //the case of parent violation: swap i <-> u
+            //N.B.: relationship with sibling is guaranteed via parent
+            data[ i ] = data[ u ]; data[ u ] = x;
+            i = u;
+          } else if(d2 >= 0 && data[ d2 ].second > data[ d1 ].second) {
+            // d2 is the smaller(larger) child if oper is min(max)
+            //swap i <-> d2
+            data[ i ] = data[ d2 ]; data[ d2 ] = x;
+            i = d2;
+          } else if(d1 >= 0 && data[ d1 ].second > y) {
+            //swap i <-> d1
+            data[ i ] = data[ d1 ]; data[ d1 ] = x;
+            i = d1;
+          } else {
+            return;
+          }
+        } else {
+          return;
+        }
+        
+      }
+    }
+  };
 }
 
 namespace myPointer {
