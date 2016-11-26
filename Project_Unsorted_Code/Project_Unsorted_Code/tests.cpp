@@ -45,7 +45,7 @@ void test_myString_Splitting() {
 
 void test_myGraph_AdjList_Reading() {
   vector<list<long>>G = vector<list<long>>(1);
-  myGraph::AdjList::Read::from_plain_text(&G, "E:/Dropbox/Courses/Roughgarden_Stanford_algo_course/Week4/_f370cd8b4d3482c940e4a57f489a200b_kargerMinCut.txt", "\t");
+  myGraph::AdjList::Read::from_plain_text(&G, "kargerMinCut.txt", "\t");
   
   
   return;
@@ -66,20 +66,20 @@ void test_myHeap_Heap() {
   myHeap::Heap h(myHeap::HeapableOperations::min);
   for(long i = 0; i < 10; ++i) {
     h.Ins({ i, myStat::Distro::runif(0L,1000L)[0] });
-    h.print();
+    h.print("%ld(%0.lf),");
   }
   cout << "---\n";
   for(long i = 0; i < 10; ++i) {    
     h.Del(i);
-    h.print();
+    h.print("%ld(%0.lf),");
   }
   return;
 }
 int main() {
-  //test_myString_Splitting();
-  //test_myGraph_AdjList_Reading();
-  //test_myStat();
-  //myPointer::Ptr<long> SP = new long[10];
+  test_myString_Splitting();
+  test_myGraph_AdjList_Reading();
+  test_myStat();
+  myPointer::Ptr<long> SP = new long[10];
   test_myHeap_Heap();
 
   system("pause");
