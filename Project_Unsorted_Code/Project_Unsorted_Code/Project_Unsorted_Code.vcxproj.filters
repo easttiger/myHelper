@@ -28,7 +28,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="kargerMinCut.txt">
+    <Text Include="graphAdjList.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

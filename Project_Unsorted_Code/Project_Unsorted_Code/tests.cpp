@@ -45,7 +45,7 @@ void test_myString_Splitting() {
 
 void test_myGraph_AdjList_Reading() {
   vector<list<long>>G = vector<list<long>>(1);
-  myGraph::AdjList::Read::from_plain_text(&G, "kargerMinCut.txt", "\t");
+  myGraph::AdjList::Read::from_plain_text(&G, "graphAdjList.txt", "\t");
   
   
   return;
