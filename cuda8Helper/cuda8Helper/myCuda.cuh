@@ -22,5 +22,9 @@ using namespace std;
 
 namespace myCuda {
   void gpuInfo();
+  namespace math {
+    __device__ float logit1(const float x);
+    __global__ void logit(float* y, const float* x, int leng);
+  }
 }
 

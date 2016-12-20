@@ -15,4 +15,16 @@ namespace myCuda {
       printf("  Peak Memory Bandwith (GB/s): %f\n", 2. * prop.memoryClockRate * (prop.memoryBusWidth / 8.) / 1.e6);      
     }
   }
+  namespace math {
+    __device__ float logit1(const float x) {
+      return expf(x) / (1. + expf(x));
+    }
+
+    __global__ void logit(float* y, const float* x, int leng) {
+      int i = blockIdx.x * blockDim.x + threadIdx.x;
+      if(i < leng) {
+        y[ i ] = logit1(x[ i ]);
+      }
+    }
+  }
 }
