@@ -12,6 +12,8 @@
 \usepackage{hyperref}
 \usepackage[authoryear]{natbib}
 \usepackage{charter}
+\usepackage{listings}
+
 \title{Thoughts along developing myHelper}
 \author{jdong}
 \begin{document}
@@ -38,7 +40,57 @@
 	\end{enumerate}
 	Create dllmain.cpp\begin{enumerate}
 		\item Defines the XLL function table \cite{BoveyWallentin2009ProfessionalExcelDevelopment-Th}
-		\item Holds DLLMain, the api entry.
+		A close relative in VBA is the Application.MacroOptions Method \url{https://msdn.microsoft.com/en-us/library/office/ff838997.aspx}. An explanation of the XLL function table can be found in \cite{BoveyWallentin2009ProfessionalExcelDevelopment-Th} pp1036. Following is an example code for just 1 function.
+		\begin{lstlisting}
+#define rgFuncsRows 1
+static LPWSTR rgFuncs[1][11] = {
+	{L"myFun",	//name: name of the C function 
+	 L"BBB",	//type: <ret><arg1><arg2>
+			//A:Boolean(short int), B:double, 
+			//D:ByteString(unsigned char*), 
+			//I:short int, J:int, K:Array(FP*)
+			//P:oper*, R:xloper*
+	 L"myFun",	//xlName: name in Excel
+	 L"x,y",	//xlArgs: name of args in Excel
+	 L"1",		//function macro type: 
+			//1=WorksheetFunction; 
+			//2=XLM macro sheet function;
+			//0=hidden function macro.
+	 L"myCategory",	// function category
+	 L"^+m",		//shortcut
+	 L"",		//help topic ID
+	 L"a sample function",	//description in fx box
+	 L"describe arg1",	//arg1 description
+	 L"describe arg2",	//arg2 description
+	}
+};
+		\end{lstlisting}
+		
+		\item Holds DLLMain, the api entry. This is common for all DLLs. It is used to hold library initialization code. The function is explained in the following:
+		\begin{lstlisting}
+//typedef int BOOL
+//#define WINAPI __stdcall
+//#define APIENTRY WINAPI
+//typedef void* LPVOID
+//typedef unsigned long DWORD
+//#define DECLARE_HANDLE(name) struct name##__{int unused;}; \
+//typedef struct name##__ *name  
+//## is the preprocessor token concatenation operator
+//DECLARE_HANDLE(HINSTANCE);
+//typedef HINSTANCE HMODULE
+BOOL APIENTRY DllMain(HMODULE hModule,
+		DWORD ul_reason_for_call,
+		LPVOID lpReserved){
+	switch(ul_reason_for_call){
+		case DLL_PROCESS_ATTACH:	//1
+		case DLL_THREAD_ATTACH:		//2
+		case DLL_THREAD_DETACH:		//3
+		case DLL_PROCESS_DETACH:	//0
+			break;
+	}
+	return TRUE;	//#define TRUE 1
+}
+		\end{lstlisting}
 		\item 
 	\end{enumerate}
 	\part{Bottom-Up}
