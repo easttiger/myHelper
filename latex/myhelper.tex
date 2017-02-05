@@ -9,6 +9,9 @@
 \usepackage{amssymb}
 \numberwithin{equation}{subsection}
 \usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[authoryear]{natbib}
+\usepackage{charter}
 \title{Thoughts along developing myHelper}
 \author{jdong}
 \begin{document}
@@ -20,10 +23,29 @@
 	\part{Top-Down}
 	This part starts with Excel programming, moving downwards the center of an XLL that stores CUDA-C programs.
 	\section{Excel UI}
-	\section{XLL Building}
-	
+	\section{Excel's C API and XLL Building}
+	Tools: Excel SDK page on MSDN: \url{https://msdn.microsoft.com/en-us/library/office/bb687883.aspx}
+	Find the files (dropbox/xl):
+	\begin{enumerate}
+		\item XLCALL.H(1481), XLCALL.CPP(120);
+		\item FRAMEWRK.H(71), FRAMEWRK.C(2090)
+		\begin{enumerate}
+			\item If made copies of those include files to the project directory, the angle bracktes should be changed to quotes.
+		\end{enumerate}
+		\item MemoryManager.h(58), MemoryManager.cpp(207);
+		\item MemoryPool.h(34), MemoryPool.cpp(80);
+		\item Generic.sln(with GENERIC.C, GENERIC.H, GENERIC.DEF, RESOURCE.H).
+	\end{enumerate}
+	Create dllmain.cpp\begin{enumerate}
+		\item Defines the XLL function table \cite{BoveyWallentin2009ProfessionalExcelDevelopment-Th}
+		\item Holds DLLMain, the api entry.
+		\item 
+	\end{enumerate}
 	\part{Bottom-Up}
 	This part starts with CUDA programming, moving upwards the center of a DLL that can be called by Excel's C API.
 	\section{GPU Hardware}
 	\section{CUDA Programming}
+	
+	\bibliographystyle{plainnat}
+	\bibliography{MasterBibliography}
 \end{document}

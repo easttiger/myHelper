@@ -1,0 +1,15 @@
+\begin{thebibliography}{1}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bovey et~al.(2009)Bovey, Wallentin, Bullen, and
+  Green]{BoveyWallentin2009ProfessionalExcelDevelopment-Th}
+Bovey, Wallentin, Bullen, and Green.
+\newblock \emph{Professional Excel Development - The Definitive Guide to
+  Developing Applications using Microsoft Excel, VBA, and .NET}.
+\newblock 2009.
+
+\end{thebibliography}
