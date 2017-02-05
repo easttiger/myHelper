@@ -1,0 +1,13 @@
+﻿  tests.cpp
+c:\github\myhelper\project_unsorted_code\project_unsorted_code\tests.cpp(58): warning C4018: '<' : signed/unsigned mismatch
+  myHelper.cpp
+c:\github\myhelper\project_unsorted_code\project_unsorted_code\myhelper.cpp(49): warning C4018: '<' : signed/unsigned mismatch
+c:\github\myhelper\project_unsorted_code\project_unsorted_code\myhelper.cpp(60): warning C4018: '<=' : signed/unsigned mismatch
+c:\github\myhelper\project_unsorted_code\project_unsorted_code\myhelper.cpp(61): warning C4018: '<' : signed/unsigned mismatch
+c:\github\myhelper\project_unsorted_code\project_unsorted_code\myhelper.cpp(74): warning C4018: '<' : signed/unsigned mismatch
+c:\github\myhelper\project_unsorted_code\project_unsorted_code\myhelper.cpp(85): warning C4018: '<=' : signed/unsigned mismatch
+c:\github\myhelper\project_unsorted_code\project_unsorted_code\myhelper.cpp(86): warning C4018: '<' : signed/unsigned mismatch
+c:\github\myhelper\project_unsorted_code\project_unsorted_code\myhelper.cpp(188): warning C4244: 'argument' : conversion from 'std::chrono::system_clock::rep' to 'unsigned int', possible loss of data
+c:\github\myhelper\project_unsorted_code\project_unsorted_code\myhelper.cpp(251): warning C4018: '<' : signed/unsigned mismatch
+  Generating Code...
+  Project_Unsorted_Code.vcxproj -> C:\GitHub\myHelper\Project_Unsorted_Code\Debug\Project_Unsorted_Code.exe

@@ -1,0 +1,13 @@
+﻿  myHelper.cpp
+myHelper.cpp(50): warning C4018: '<' : signed/unsigned mismatch
+myHelper.cpp(61): warning C4018: '<=' : signed/unsigned mismatch
+myHelper.cpp(62): warning C4018: '<' : signed/unsigned mismatch
+myHelper.cpp(75): warning C4018: '<' : signed/unsigned mismatch
+myHelper.cpp(86): warning C4018: '<=' : signed/unsigned mismatch
+myHelper.cpp(87): warning C4018: '<' : signed/unsigned mismatch
+myHelper.cpp(184): warning C4244: 'argument' : conversion from 'std::chrono::system_clock::rep' to 'unsigned int', possible loss of data
+  tests.cpp
+tests.cpp(58): warning C4018: '<' : signed/unsigned mismatch
+  Generating code
+  Finished generating code
+  Project_Unsorted_Code.vcxproj -> C:\work\Visual Studio 2013\Projects\temp\temp201611241039\Release\Project_Unsorted_Code.exe
