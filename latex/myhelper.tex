@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{array}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{amsthm}
+\usepackage{amsbsy}
+\usepackage{amstext}
+\usepackage{amssymb}
+\numberwithin{equation}{subsection}
+\usepackage{graphicx}
+\title{Thoughts along developing myHelper}
+\author{jdong}
+\begin{document}
+	\maketitle
+	\abstract{
+		I'm going to write this library for my own use but with a long term plan such that the generality level is no less than one of a shared library. 
+		Until 2017-02-05, the rough skeleton is thought to be a CUDA-C/C++ dynamic library compilable on both unix and windows and on windows using Excel as the interactive GUI.
+	}
+	\part{Top-Down}
+	This part starts with Excel programming, moving downwards the center of an XLL that stores CUDA-C programs.
+	\section{Excel UI}
+	\section{XLL Building}
+	
+	\part{Bottom-Up}
+	This part starts with CUDA programming, moving upwards the center of a DLL that can be called by Excel's C API.
+	\section{GPU Hardware}
+	\section{CUDA Programming}
+\end{document}
