@@ -46,8 +46,15 @@ int cublas_test() {
   return 0;
 }
 
+void test_random_number() {
+  thrust::device_vector<float> d(10);
+  myCuda::ran::runif(d);
+  thrust::copy(d.begin(), d.end(), std::ostream_iterator<float>(std::cout, "\n"));
+}
+
 int main() {
-  cout << "unified_memory : " << unified_memory() << endl;
+  myCuda::gpuInfo();
+  test_random_number();
   system("pause");
   return  0;
 }
