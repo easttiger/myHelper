@@ -12,7 +12,7 @@ int unified_memory() {
   for(int i = 0; i < N; ++i) {
     x[ i ] = (i - N / 2.) / N;
   }
-  logit << <1, N >> >(y, x, N);
+  logit <<<1, N >>>(y, x, N);
   cudaDeviceSynchronize();
   for(int i = 0; i < N; ++i) {
     printf("logit(%f)=%f\n", x[ i ], y[ i ]);
@@ -51,6 +51,11 @@ void test_random_number() {
   myCuda::ran::runif(d);
   thrust::copy(d.begin(), d.end(), std::ostream_iterator<float>(std::cout, "\n"));
 }
+
+
+
+
+
 
 int main() {
   myCuda::gpuInfo();

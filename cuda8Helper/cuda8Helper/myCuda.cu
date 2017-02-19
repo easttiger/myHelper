@@ -16,6 +16,9 @@ namespace myCuda {
       printf("  Memory Clock Rate (KHz): %d\n", prop.memoryClockRate);
       printf("  Memory Bus Width (bits): %d\n", prop.memoryBusWidth);
       printf("  Peak Memory Bandwith (GB/s): %f\n", 2. * prop.memoryClockRate * (prop.memoryBusWidth / 8.) / 1.e6);
+      printf("  Max block size: %d\n", prop.maxThreadsPerBlock);
+      printf("  Max num blocks: %d\n", prop.maxGridSize);
+      printf("  Warp size: %d\n", prop.warpSize);
     }
   }
 
