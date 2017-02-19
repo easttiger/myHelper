@@ -1,13 +1,11 @@
-﻿  tests.cpp
-c:\github\myhelper\project_unsorted_code\project_unsorted_code\tests.cpp(58): warning C4018: '<' : signed/unsigned mismatch
-  myHelper.cpp
-c:\github\myhelper\project_unsorted_code\project_unsorted_code\myhelper.cpp(49): warning C4018: '<' : signed/unsigned mismatch
-c:\github\myhelper\project_unsorted_code\project_unsorted_code\myhelper.cpp(60): warning C4018: '<=' : signed/unsigned mismatch
-c:\github\myhelper\project_unsorted_code\project_unsorted_code\myhelper.cpp(61): warning C4018: '<' : signed/unsigned mismatch
-c:\github\myhelper\project_unsorted_code\project_unsorted_code\myhelper.cpp(74): warning C4018: '<' : signed/unsigned mismatch
-c:\github\myhelper\project_unsorted_code\project_unsorted_code\myhelper.cpp(85): warning C4018: '<=' : signed/unsigned mismatch
-c:\github\myhelper\project_unsorted_code\project_unsorted_code\myhelper.cpp(86): warning C4018: '<' : signed/unsigned mismatch
-c:\github\myhelper\project_unsorted_code\project_unsorted_code\myhelper.cpp(188): warning C4244: 'argument' : conversion from 'std::chrono::system_clock::rep' to 'unsigned int', possible loss of data
-c:\github\myhelper\project_unsorted_code\project_unsorted_code\myhelper.cpp(251): warning C4018: '<' : signed/unsigned mismatch
-  Generating Code...
-  Project_Unsorted_Code.vcxproj -> C:\GitHub\myHelper\Project_Unsorted_Code\Debug\Project_Unsorted_Code.exe
+﻿Build started 19/2/2017 11:30:44 PM.
+     1>Project "C:\GitHub\myHelper\Project_Unsorted_Code\Project_Unsorted_Code\Project_Unsorted_Code.vcxproj" on node 3 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\GitHub\myHelper\cuda8Helper\Debug\Project_Unsorted_Code.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\GitHub\myHelper\cuda8Helper\Debug\Project_Unsorted_Code.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\GitHub\myHelper\cuda8Helper\Debug\Project_Unsorted_Code.lib" /MACHINE:X86 Debug\myHelper.obj
+         Debug\tests.obj
+         Project_Unsorted_Code.vcxproj -> C:\GitHub\myHelper\cuda8Helper\Debug\Project_Unsorted_Code.exe
+     1>Done Building Project "C:\GitHub\myHelper\Project_Unsorted_Code\Project_Unsorted_Code\Project_Unsorted_Code.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.82
