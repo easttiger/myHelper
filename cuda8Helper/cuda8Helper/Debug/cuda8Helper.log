@@ -1,14 +1,14 @@
-﻿Build started 19/2/2017 11:49:34 PM.
+﻿Build started 20/2/2017 12:03:43 AM.
      1>Project "C:\GitHub\myHelper\cuda8Helper\cuda8Helper\cuda8Helper.vcxproj" on node 2 (Build target(s)).
      1>AddCudaCompileDeps:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /DWIN32 /D_DEBUG /D_CONSOLE /D_MBCS /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" /I. /FIcuda_runtime.h /c C:\GitHub\myHelper\cuda8Helper\cuda8Helper\kernel.cu 
      1>Project "C:\GitHub\myHelper\cuda8Helper\cuda8Helper\cuda8Helper.vcxproj" (1) is building "C:\GitHub\myHelper\cuda8Helper\cuda8Helper\cuda8Helper.vcxproj" (1:2) on node 2 (CudaBuildCore target(s)).
      1>CudaBuildCore:
          Compiling CUDA source file kernel.cu...
-         cmd.exe /C "C:\Users\easttiger\AppData\Local\Temp\tmp6d1ab128d4b74854a5715b65fb883fc2.cmd"
-         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin\nvcc.exe" -gencode=arch=compute_60,code=\"sm_60,compute_60\" --use-local-env --cl-version 2013 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include"  -G   --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -DWIN32 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -o Debug\kernel.cu.obj "C:\GitHub\myHelper\cuda8Helper\cuda8Helper\kernel.cu"
+         cmd.exe /C "C:\Users\easttiger\AppData\Local\Temp\tmpa16efc78a38e4caeafb8ff4c98180c63.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin\nvcc.exe" -gencode=arch=compute_30,code=\"sm_30,compute_30\" --use-local-env --cl-version 2013 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include"  -G   --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -DWIN32 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -o Debug\kernel.cu.obj "C:\GitHub\myHelper\cuda8Helper\cuda8Helper\kernel.cu"
          
-         C:\GitHub\myHelper\cuda8Helper\cuda8Helper>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin\nvcc.exe" -gencode=arch=compute_60,code=\"sm_60,compute_60\" --use-local-env --cl-version 2013 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include"  -G   --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -DWIN32 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -o Debug\kernel.cu.obj "C:\GitHub\myHelper\cuda8Helper\cuda8Helper\kernel.cu" 
+         C:\GitHub\myHelper\cuda8Helper\cuda8Helper>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin\nvcc.exe" -gencode=arch=compute_30,code=\"sm_30,compute_30\" --use-local-env --cl-version 2013 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include"  -G   --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -DWIN32 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -o Debug\kernel.cu.obj "C:\GitHub\myHelper\cuda8Helper\cuda8Helper\kernel.cu" 
      1>c:\program files\nvidia gpu computing toolkit\cuda\v8.0\include\math_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
      1>c:\program files\nvidia gpu computing toolkit\cuda\v8.0\include\math_functions.h(849): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
      1>c:\program files\nvidia gpu computing toolkit\cuda\v8.0\include\math_functions.h(1787): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
@@ -25,11 +25,12 @@
      1>c:\program files\nvidia gpu computing toolkit\cuda\v8.0\include\device_double_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
      1>c:\program files\nvidia gpu computing toolkit\cuda\v8.0\include\sm_20_intrinsics.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
      1>c:\program files\nvidia gpu computing toolkit\cuda\v8.0\include\sm_20_intrinsics.h(943): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
-     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(39): warning : variable "cudaStat" was declared but never referenced
-     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(40): warning : variable "stat" was declared but never referenced
-     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(41): warning : variable "handle" was declared but never referenced
-     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(43): warning : variable "devPtrA" was declared but never referenced
-     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(31): warning : function "modify" was declared but never referenced
+     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(33): warning : variable "cudaStat" was declared but never referenced
+     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(34): warning : variable "stat" was declared but never referenced
+     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(35): warning : variable "handle" was declared but never referenced
+     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(37): warning : variable "devPtrA" was declared but never referenced
+     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(25): warning : function "modify" was declared but never referenced
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include\thrust/system/cuda/detail/synchronize.inl(35): warning : calling a __host__ function("cudaDeviceSynchronize") from a __host__ __device__ function("thrust::system::cuda::detail::synchronize") is not allowed
      1>c:\program files\nvidia gpu computing toolkit\cuda\v8.0\include\math_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
      1>c:\program files\nvidia gpu computing toolkit\cuda\v8.0\include\math_functions.h(849): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
      1>c:\program files\nvidia gpu computing toolkit\cuda\v8.0\include\math_functions.h(1787): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
@@ -46,11 +47,11 @@
      1>c:\program files\nvidia gpu computing toolkit\cuda\v8.0\include\device_double_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
      1>c:\program files\nvidia gpu computing toolkit\cuda\v8.0\include\sm_20_intrinsics.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
      1>c:\program files\nvidia gpu computing toolkit\cuda\v8.0\include\sm_20_intrinsics.h(943): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
-     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(39): warning : variable "cudaStat" was declared but never referenced
-     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(40): warning : variable "stat" was declared but never referenced
-     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(41): warning : variable "handle" was declared but never referenced
-     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(43): warning : variable "devPtrA" was declared but never referenced
-     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(31): warning : function "modify" was declared but never referenced
+     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(33): warning : variable "cudaStat" was declared but never referenced
+     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(34): warning : variable "stat" was declared but never referenced
+     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(35): warning : variable "handle" was declared but never referenced
+     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(37): warning : variable "devPtrA" was declared but never referenced
+     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(25): warning : function "modify" was declared but never referenced
      1>c:\program files\nvidia gpu computing toolkit\cuda\v8.0\include\math_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
      1>c:\program files\nvidia gpu computing toolkit\cuda\v8.0\include\math_functions.h(849): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
      1>c:\program files\nvidia gpu computing toolkit\cuda\v8.0\include\math_functions.h(1787): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
@@ -103,16 +104,34 @@
      1>c:\program files\nvidia gpu computing toolkit\cuda\v8.0\include\math_functions.h(7956): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
          kernel.cu
      1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include\thrust/detail/allocator/allocator_traits.h(51): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
-     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(18): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(40): warning C4101: 'stat' : unreferenced local variable
-     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(39): warning C4101: 'cudaStat' : unreferenced local variable
-     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(43): warning C4101: 'devPtrA' : unreferenced local variable
-     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(41): warning C4101: 'handle' : unreferenced local variable
-     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(136): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(12): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(34): warning C4101: 'stat' : unreferenced local variable
+     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(33): warning C4101: 'cudaStat' : unreferenced local variable
+     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(37): warning C4101: 'devPtrA' : unreferenced local variable
+     1>C:/GitHub/myHelper/cuda8Helper/cuda8Helper/kernel.cu(35): warning C4101: 'handle' : unreferenced local variable
      1>Done Building Project "C:\GitHub\myHelper\cuda8Helper\cuda8Helper\cuda8Helper.vcxproj" (CudaBuildCore target(s)).
-     1>Link:
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt weaver.cu
+         weaver.cu
+     1>c:\github\myhelper\cuda8helper\cuda8helper\weaver.cu(63): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>c:\github\myhelper\cuda8helper\cuda8helper\weaver.cu(65): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\github\myhelper\cuda8helper\cuda8helper\weaver.cu(69): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>c:\github\myhelper\cuda8helper\cuda8helper\weaver.cu(71): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\github\myhelper\cuda8helper\cuda8helper\weaver.cu(75): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>c:\github\myhelper\cuda8helper\cuda8helper\weaver.cu(78): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\github\myhelper\cuda8helper\cuda8helper\weaver.cu(80): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\github\myhelper\cuda8helper\cuda8helper\weaver.cu(88): warning C4305: 'argument' : truncation from 'double' to 'float'
+       Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\GitHub\myHelper\cuda8Helper\Debug\cuda8Helper.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\lib\Win32" cudart.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\GitHub\myHelper\cuda8Helper\Debug\cuda8Helper.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\GitHub\myHelper\cuda8Helper\Debug\cuda8Helper.lib" /MACHINE:X86 Debug\kernel.cu.obj
          Debug\myCuda.cu.obj
+         Debug\weaver.obj
          cuda8Helper.vcxproj -> C:\GitHub\myHelper\cuda8Helper\Debug\cuda8Helper.exe
        PostBuildEvent:
          echo copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin\cudart*.dll" "C:\GitHub\myHelper\cuda8Helper\Debug\"
@@ -126,4 +145,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:13.73
+Time Elapsed 00:00:13.89
